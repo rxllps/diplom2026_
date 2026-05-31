@@ -1,0 +1,54 @@
+<!-- all.html -->
+<div ng-if="admin.isAdmin">
+<div class="page-header">
+	<h1>
+		Admin Page 
+		<a href="/register" class="btn btn-default">
+			<span class="glyphicon glyphicon-plus"></span> 
+			New User
+		</a>
+	</h1>
+
+</div>
+
+
+<div class="jumbotron text-center" ng-show="admin.processing">
+	<span class="glyphicon glyphicon-repeat spinner"></span>
+	<p>Loading Users...</p>
+</div>
+
+<table class="table table-bordered table-striped" ng-show="admin.users">
+	<thead>
+		<tr>
+			<th>_id</th>
+			<th>Name</th>
+			<th>Username</th>
+			<th>Email</th>
+			<th>Phone</th>
+			<th>Age</th>
+			<th>Address</th>
+			<th class="col-sm-2"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="person in admin.users">
+			<td>{{ person._id }}</td>
+			<td>{{ person.name }}</td>
+			<td>{{ person.username }}</td>
+			<td>{{ person.email }}</td>
+			<td>{{ person.phone_number }}</td>
+			<td>{{ person.age }}</td>
+			<td>{{ person.address }}</td>
+			<td class="col-sm-2">
+				<a ng-href="/admin/{{ person._id }}/edit" class="btn btn-danger btn-sm" style="margin: 0.2em">Edit</a>
+				<a ng-href="/admin/{{ person._id }}/delete" class="btn btn-danger btn-sm" style="margin: 0.2em">Delete</a>
+				<a href="/admin/{{ person._id }}/bookings" class="btn btn-primary btn-sm" style="margin: 0.2em">View Bookings</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<div ng-if="!admin.isAdmin" class="alert alert-danger">
+	<p>The account you are using is not a site administrator, please log in as an administrator.</p>
+</div>
+	

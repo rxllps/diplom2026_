@@ -1,0 +1,50 @@
+<!-- contact.html -->
+<div class="container">	
+<div class="page-header">
+	<h1>Contact Us</h1>
+</div>
+
+<div class="row">
+	<div class="alert alert-success" ng-show="contact.message">
+			{{ contact.message }}
+	</div>
+</div>
+
+<div ng-hide="contact.message">
+	<form ng-submit="contact.sendMail()">
+		<div class="col-sm-6">
+			<div class="row">
+				<div class="form-group">
+					<label for="email">Return Email</label>
+					<!-- contactUs.email is not actually a function yet -->
+					<input type="email" class="form-control" placeholder="Your Email" ng-model="contact.userData.email">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					<label>Subject</label>
+					<input type="text" class="form-control" placeholder="Subject" ng-model="contact.userData.subject">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					<label class="message">Your Message</label>
+					<textarea class="form-control" rows="5" id="message" ng-model="contact.userData.message"></textarea>
+				</div>
+			</div>	
+			<div class="row">
+				<button type="submit" class="btn btn-success">Send</button>
+			</div>
+		</div>			
+	</form>
+	<div class="col-sm-6" style="text-align:center">
+		<h4>Contact Information: </h4>
+		<p>Purple Fox Karaoke Pub</p>
+		<p>Phone number: 250-555-5555</p>
+		<p>1234 Place Ave. A1B 2C3</p>
+	</div>
+</div>
+<br></br>
+
+			
+</div>

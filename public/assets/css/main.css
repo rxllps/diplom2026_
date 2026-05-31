@@ -1,0 +1,18 @@
+#mouseover:hover {
+    background: #d3d3d3;
+    cursor: pointer;
+}
+
+#nopad {
+	padding: 0px;
+	text-align: center
+}
+
+
+.form-group .help-block {
+  display: none;
+}
+
+.form-group.has-error .help-block {
+  display: block;
+}

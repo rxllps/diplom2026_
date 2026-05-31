@@ -1,1 +1,3 @@
-# diplom2026_
+
+An application for scheduling / booking karaoke rooms online
+

@@ -1,0 +1,29 @@
+<div class="container">
+    	<div class="page-header">
+        	<h1> Password Reset </h1>	
+      </div>
+    	
+
+     <form ng-submit="pwReset.sendToken()">
+			<div class="row">
+      	<div class="col-sm-6">
+					<div class="form-group">
+				  		<label for="email">Email Address</label>
+				    	<input type="email" class="form-control" placeholder="Email" ng-model="pwReset.userData.email">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+						<div class="alert alert-danger" ng-if="pwReset.err">
+								{{ pwReset.err }}
+						</div>
+						<div class="alert alert-success" ng-if="pwReset.success">
+								{{ pwReset.success }}
+						</div>
+		  			<button type="submit" class="btn btn-success">Reset Password</button>
+				</div>
+			</div>
+		</form>
+
+    </div>

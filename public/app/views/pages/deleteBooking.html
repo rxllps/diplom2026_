@@ -1,0 +1,27 @@
+<div align="center">
+
+	<div class="container" ng-if="!booking.deleted">
+		<h3>Are you sure you would like to delete this booking?</h3>
+		<form ng-submit="booking.deleteBooking()">
+			<br/>
+
+			<div ng-if="booking.warningDelete" class="alert alert-danger" role="alert">
+			  <span class="glyphicon glyphicon-alert"></span>
+			  Warning: Cancelling this booking less than 4 hours before the start time of the booking will result in a 12-hour booking ban.
+			</div>
+
+			<button type="submit" class="btn btn-danger">Delete</button>
+			<a href="/{{ main.user._id }}/bookings"><button class="btn btn-default">Cancel</button></a>
+		</form>
+	</div>
+	
+	<div class="container" ng-if="booking.deleted">
+		<h3>Booking Successfully Deleted</h3>
+		<div class="alert alert-danger" ng-if="booking.warningDelete">
+          {{ booking.message }}  	
+        </div>
+		</br>
+		<a href="/{{ booking.user_id }}/bookings "><button class="btn btn-default">Back to Bookings</button></a>
+	</div>
+
+</div>
